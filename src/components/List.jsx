@@ -3,13 +3,13 @@ import Item from './Item';
 
 export default class List extends Component {
   render() {
-    const {toDos} = this.props
+    const {toDos, updateDone} = this.props
     return (
     <div>
         {
             toDos.map(
                 (toDo) => {
-                    return <Item key={toDo.id} {...toDo}/>
+                    return <Item key={toDo.id} {...toDo} updateDone={updateDone}/>
                 }
             )
         }

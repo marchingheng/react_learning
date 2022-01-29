@@ -7,6 +7,7 @@ handleEnter = (event) => {
     if (keyCode != 13) return
     const toDoObj = {id: nanoid(), name: target.value, done: false}
     this.props.addToDo(toDoObj)
+    target.value = ""
 }
   render() {
     return (
