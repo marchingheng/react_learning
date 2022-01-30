@@ -35,13 +35,19 @@ export default class App extends Component{
         this.setState({toDos: newToDos})
     }
 
+    deleteDoneItem = ()=>{
+        const {toDos} = this.state
+        const newToDos = toDos.filter(toDo => !toDo.done)
+        this.setState({toDos: newToDos})
+    }
+
     render(){
         const {toDos} = this.state
         return (
             <div>
                 <Header addToDo={this.addToDo}/>
                 <List toDos={toDos} updateDone={this.updateDone} deleteItem={this.deleteItem}/>
-                <Footer toDos={toDos} selectAll={this.selectAll}/>
+                <Footer toDos={toDos} selectAll={this.selectAll} deleteDoneItem={this.deleteDoneItem}/>
             </div>
         )
     }
