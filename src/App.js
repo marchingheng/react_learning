@@ -28,6 +28,12 @@ export default class App extends Component{
         const newToDos = toDos.filter(toDo => toDo.id != id)
         this.setState({toDos: newToDos})
     }
+    
+    selectAll = (done)=>{
+        const {toDos} = this.state
+        const newToDos = toDos.map(toDo => {return {...toDo, done}})
+        this.setState({toDos: newToDos})
+    }
 
     render(){
         const {toDos} = this.state
@@ -35,7 +41,7 @@ export default class App extends Component{
             <div>
                 <Header addToDo={this.addToDo}/>
                 <List toDos={toDos} updateDone={this.updateDone} deleteItem={this.deleteItem}/>
-                <Footer toDos={toDos}/>
+                <Footer toDos={toDos} selectAll={this.selectAll}/>
             </div>
         )
     }

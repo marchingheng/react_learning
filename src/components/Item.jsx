@@ -19,7 +19,7 @@ export default class Item extends Component {
     return (
         <li>
             <label>
-                <input type="checkbox" defaultChecked={done} onChange={this.handleCheck(id)}/>
+                <input type="checkbox" checked={done} onChange={this.handleCheck(id)}/>
                 <span>{name}</span>
             </label>
             <button onClick={this.handleClick(id)}>delete</button>
