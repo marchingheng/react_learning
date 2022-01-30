@@ -16,12 +16,16 @@ export default class App extends Component{
 
     updateDone = (id, done)=>{
         const {toDos} = this.state
-        const newToDos = toDos.map(
-            toDo => {
-                if(toDo.id == id)return{...toDo, done}
-                else return toDo
-            }
-        )
+        const newToDos = toDos.map(toDo => {
+            if(toDo.id == id)return {...toDo, done}
+            return toDo
+        })
+        this.setState({toDos: newToDos})
+    }
+
+    deleteItem = (id)=>{
+        const {toDos} = this.state
+        const newToDos = toDos.filter(toDo => toDo.id != id)
         this.setState({toDos: newToDos})
     }
 
@@ -30,8 +34,8 @@ export default class App extends Component{
         return (
             <div>
                 <Header addToDo={this.addToDo}/>
-                <List toDos={toDos} updateDone={this.updateDone}/>
-                <Footer/>
+                <List toDos={toDos} updateDone={this.updateDone} deleteItem={this.deleteItem}/>
+                <Footer toDos={toDos}/>
             </div>
         )
     }
