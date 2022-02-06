@@ -27,3 +27,4 @@ yarn-error.log*
 
 # files from other sections
 /1_hello_react
+/2_todo_list
