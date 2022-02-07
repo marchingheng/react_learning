@@ -19,7 +19,7 @@ export default class App extends Component{
                         <Route path="home/*" element={<Home/>}/>
                         <Route path="about" element={<About/>}/>
                         {/* when the url is to the index page, it is equal to <Link to="/about"> is clicked */}
-                        <Route index element={<Navigate to="home"/>}/>
+                        <Route path="/" element={<Navigate to="home"/>}/>
                     </Routes>
                 </ul>
             </BrowserRouter>
