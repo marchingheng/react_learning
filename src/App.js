@@ -13,13 +13,15 @@ export default class App extends Component{
                     <Link to="about">Route to About</Link>
                 </div>
                 {/* subscribe the Routes component to the routes */}
-                <Routes>
-                    {/* the default matching is exact matching, so you have to use "home/*" in order to explore the nested routes */}
-                    <Route path="home/*" element={<Home/>}/>
-                    <Route path="about" element={<About/>}/>
-                    {/* when the url is to the index page, it is equal to <Link to="/about"> is clicked */}
-                    <Route index element={<Navigate to="home"/>}/>
-                </Routes>
+                <ul>
+                    <Routes>
+                        {/* the default matching is exact matching, so you have to use "home/*" in order to explore the nested routes */}
+                        <Route path="home/*" element={<Home/>}/>
+                        <Route path="about" element={<About/>}/>
+                        {/* when the url is to the index page, it is equal to <Link to="/about"> is clicked */}
+                        <Route index element={<Navigate to="home"/>}/>
+                    </Routes>
+                </ul>
             </BrowserRouter>
         )
     }

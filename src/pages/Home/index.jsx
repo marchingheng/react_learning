@@ -7,16 +7,20 @@ export default class Home extends React.Component {
         return (
             <>
                 <h1>Home</h1>
-                <Link to="messages">Messages</Link>
-                <br/>
-                <Link to="news">News</Link>
+                <ul>
+                    <Link to="messages">Messages</Link>
+                    <br/>
+                    <Link to="news">News</Link>
+                </ul>
 
-                <Routes>
-                    <Route path="messages" element={<Messages/>}/>
-                    <Route path="news" element={<News/>}/>
-                    {/* when the url is to the index page, it is equal to <Link to="/about"> is clicked */}
-                    <Route path="/" element={<Navigate to="messages"/>}/>
-                </Routes>
+                <ul>
+                    <Routes>
+                        <Route path="messages/*" element={<Messages/>}/>
+                        <Route path="news" element={<News/>}/>
+                        {/* when the url is to the index page, it is equal to <Link to="/about"> is clicked */}
+                        <Route path="/" element={<Navigate to="messages"/>}/>
+                    </Routes>
+                </ul>
             </>
         );
     }
