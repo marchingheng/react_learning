@@ -1,5 +1,6 @@
 import React from 'react';
 import store from '../../redux/store';
+import { createIncrementAction, createDecrementAction } from '../../redux/sum_action';
 
 export default class Count extends React.Component {
     // componentDidMount(){
@@ -12,22 +13,22 @@ export default class Count extends React.Component {
 
     increament = () => {
         const {value} = this.selectedNumber
-        store.dispatch({type: 'increment', data: value*1})
+        store.dispatch(createIncrementAction(value))
 
     }
     decreament = () => {
         const {value} = this.selectedNumber
-        store.dispatch({type: 'decrement', data: value*1})
+        store.dispatch(store.dispatch(createDecrementAction(value)))
     }
     increamentIfOdd = () => {
         const {value} = this.selectedNumber
         const sum = store.getState()
-        if(sum%2 === 1){store.dispatch({type: 'increment', data: value*1})}
+        if(sum%2 === 1){store.dispatch(createIncrementAction(value))}
     }
     increamentAsync = () => {
         const {value} = this.selectedNumber
         setTimeout(()=>{
-            store.dispatch({type: 'increment', data: value*1})
+            store.dispatch(store.dispatch(createIncrementAction(value)))
         }, 500)
     }
 
