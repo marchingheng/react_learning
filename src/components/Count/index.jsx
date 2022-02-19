@@ -2,11 +2,13 @@ import React from 'react';
 import store from '../../redux/store';
 
 export default class Count extends React.Component {
-    componentDidMount(){
-        store.subscribe(()=>{
-            this.setState({})
-        })
-    }
+    // componentDidMount(){
+    //     // when Count component is mounted, start listening to the change of any state in store(subscribe)
+    //     // if there is any change, render Count component again
+    //     store.subscribe(()=>{
+    //         this.setState({})
+    //     })
+    // }
 
     increament = () => {
         const {value} = this.selectedNumber
