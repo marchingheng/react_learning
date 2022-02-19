@@ -24,7 +24,3 @@ yarn-error.log*
 
 # files from react framework
 /_files_from_react_framework
-
-# files from other sections
-/1_hello_react
-/2_todo_list

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
-import News from './News/';
-import Messages from './Messages/'
+import News from './News';
+import Messages from './Messages'
 export default class Home extends React.Component {
     render() {
         return (
