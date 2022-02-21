@@ -1,15 +1,18 @@
 import { nanoid } from 'nanoid';
 import React from 'react';
+import { createAddPersonAction } from '../../redux/actions/person';
+import {connect} from 'react-redux'
 
 export class Person extends React.Component {
     addPerson = ()=>{
         const name = this.nameNode.value
         const age = this.ageNode.value
         const personObj = {name, age, id: nanoid()}
-        console.log()
+        this.props.add_person(personObj)
     }
 
     render() {
+        console.log(this.props)
         return (
         <div>
             <h1>I am Person component</h1>
@@ -17,10 +20,17 @@ export class Person extends React.Component {
             <input ref={c=>this.ageNode=c} type="text" placeholder='input age'></input>&nbsp;
             <button onClick={this.addPerson}>Add a person</button>
             <ul>
-                <li>name1--age1</li>
-                <li>name2--age2</li>
+                {
+                    this.props.people.map(person => <li key={person.id}>name: {person.name}, age: {person.age}</li>)
+                }
             </ul>
         </div>
         );
     }
 }
+
+const mapStateToProps = state => ({people: state.people})
+const mapDispatchToProps = {
+    add_person: createAddPersonAction
+}
+export default connect(mapStateToProps,mapDispatchToProps)(Person)
