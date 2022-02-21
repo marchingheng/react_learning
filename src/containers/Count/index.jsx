@@ -45,7 +45,7 @@ class Count extends React.Component {
     }
 }
 
-const mapStateToProps = state => ({count: state})
+const mapStateToProps = state => ({count: state.sum})
 const mapDispatchToProps = {
     increment: createIncrementAction,
     decrement: createDecrementAction
