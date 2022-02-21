@@ -11,6 +11,16 @@ export class Person extends React.Component {
         this.props.add_person(personObj)
     }
 
+    clearInputs = ()=>{
+        this.nameNode.value = ""
+        this.ageNode.value = ""
+    }
+
+    handleOnClick = ()=>{
+        this.addPerson()
+        this.clearInputs()
+    }
+
     render() {
         return (
         <div>
@@ -18,7 +28,7 @@ export class Person extends React.Component {
             <h2>Sum from Count component is {this.props.sum}</h2>
             <input ref={c=>this.nameNode=c} type="text" placeholder='input name'></input>&nbsp;
             <input ref={c=>this.ageNode=c} type="text" placeholder='input age'></input>&nbsp;
-            <button onClick={this.addPerson}>Add a person</button>
+            <button onClick={this.handleOnClick}>Add a person</button>
             <ul>
                 {
                     this.props.people.map(person => <li key={person.id}>name: {person.name}, age: {person.age}</li>)
