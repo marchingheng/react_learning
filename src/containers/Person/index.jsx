@@ -1,9 +1,12 @@
+import { nanoid } from 'nanoid';
 import React from 'react';
 
 export class Person extends React.Component {
     addPerson = ()=>{
         const name = this.nameNode.value
         const age = this.ageNode.value
+        const personObj = {name, age, id: nanoid()}
+        console.log()
     }
 
     render() {
