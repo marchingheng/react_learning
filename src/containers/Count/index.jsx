@@ -14,7 +14,7 @@ class Count extends React.Component {
     }
     increamentIfOdd = () => {
         const {value} = this.selectedNumber
-        if(this.props.count % 2 === 1){
+        if(this.props.sum % 2 === 1){
             this.props.increment(value*1)
         }
     }
@@ -29,7 +29,8 @@ class Count extends React.Component {
         return (
         <div>
             <h1>I am Count component</h1>
-            <h2>current sum is: {this.props.count}</h2>
+            <h2>current sum is: {this.props.sum}</h2>
+            <h2>Number of people from Person component is {this.props.people.length}</h2>
             <select ref={c => this.selectedNumber = c}>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -45,7 +46,7 @@ class Count extends React.Component {
     }
 }
 
-const mapStateToProps = state => ({count: state.sum})
+const mapStateToProps = state => ({sum: state.sum, people: state.people})
 const mapDispatchToProps = {
     increment: createIncrementAction,
     decrement: createDecrementAction

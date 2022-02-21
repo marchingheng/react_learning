@@ -12,10 +12,10 @@ export class Person extends React.Component {
     }
 
     render() {
-        console.log(this.props)
         return (
         <div>
             <h1>I am Person component</h1>
+            <h2>Sum from Count component is {this.props.sum}</h2>
             <input ref={c=>this.nameNode=c} type="text" placeholder='input name'></input>&nbsp;
             <input ref={c=>this.ageNode=c} type="text" placeholder='input age'></input>&nbsp;
             <button onClick={this.addPerson}>Add a person</button>
@@ -29,7 +29,7 @@ export class Person extends React.Component {
     }
 }
 
-const mapStateToProps = state => ({people: state.people})
+const mapStateToProps = state => ({people: state.people, sum: state.sum})
 const mapDispatchToProps = {
     add_person: createAddPersonAction
 }
