@@ -9,12 +9,19 @@ export default class Count extends React.Component {
     }
     decreament = () => {
         const {value} = this.selectedNumber
+        this.props.decrement(value*1)
     }
     increamentIfOdd = () => {
         const {value} = this.selectedNumber
+        if(this.props.count % 2 === 1){
+            this.props.increment(value*1)
+        }
     }
     increamentAsync = () => {
         const {value} = this.selectedNumber
+        setTimeout(() => {
+            this.props.increment(value*1)
+        }, 500)
     }
 
     render() {
