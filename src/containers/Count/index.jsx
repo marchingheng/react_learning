@@ -28,7 +28,8 @@ class Count extends React.Component {
     render() {
         return (
         <div>
-            <h1>current sum is: {this.props.count}</h1>
+            <h1>I am Count component</h1>
+            <h2>current sum is: {this.props.count}</h2>
             <select ref={c => this.selectedNumber = c}>
                 <option value="1">1</option>
                 <option value="2">2</option>
