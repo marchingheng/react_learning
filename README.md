@@ -43,7 +43,7 @@ When a component need to be rendered again, it will compare the old virtual DOM 
 ## Please specify keys of components in list
 When you are rendering a list of nodes, the best practice is to use some unique identifier like `id` as the key. If you don’t specify the key explicitly, the default key will be the index of each element in the list, which could be inefficient and error-prone if you add item to the middle or beginning of the list: 
 multiple nodes will have to render again, 
-and if each node in the list have <input> tag like <li>something<input/></li>, the input tag will be misplaced, because the input value is in real DOM rather than in virtual DOM, thus won’t be used in making comparison.
+and if each node in the list have `<input>` tag like `<li>something<input/></li>`, the input tag will be misplaced, because the input value is in real DOM rather than in virtual DOM, thus won’t be used in making comparison.
 
 ## React framework 3 core files: 
 index.js is the entrance which do 2 things
