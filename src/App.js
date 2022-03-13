@@ -1,11 +1,11 @@
 import React,{Component} from "react"
-import HookDemo from "./components/1_hooks_basic"
+import HookFather from "./components/2_hooks_father"
 
 export default class App extends Component{
     render(){
         return (
             <div>
-                <HookDemo/>
+                <HookFather/>
             </div>
         )
     }
