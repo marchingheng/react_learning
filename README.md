@@ -19,7 +19,7 @@ Props: data from external source\
 Refs: it is the replacement of element `id` in native javascript, which help us access the elements of the component; document of React does not suggest to use it too often because it would slow down the page. \
 Refs is better than id because: \
 You will need to call React.createRef()each time which ensures refs is unique\
-The refs will only be accessible  in the context where it is defined, which force developers to use state/props outside of the context\
+The refs will only be accessible  in the context where it is defined, which force developers to use state/props outside of the context.
 
 Class component have access to state, props and refs; Function component only have access to props unless using hooks
 
@@ -35,7 +35,7 @@ and if each node in the list have `<input>` tag like `<li>something<input/></li>
 index.js is the entrance which do 2 things\
 importing dependencies\
 mount App.js to node <root> written in index.html\
-App.js is the source component of everything\
+App.js is the source component of everything
 ## Lifecycle hooks/function: 
 Used in class component: componentDidMount, componentWillUnmount, componentDidUpdate\
 Used in function component, equal to the 3 above combined: useEffect\
@@ -43,7 +43,7 @@ Used in function component, equal to the 3 above combined: useEffect\
 Conceptualize the frontend with components\
 Develop static UI with components\
 Connect to the database\
-Make it interactive\
+Make it interactive
 ## class vs className vs style
 All of these are for styling, while “style” is for defining the style inline, class(native javascript) and className(React) are referring to a css file
 
@@ -72,11 +72,11 @@ Body of a component is passed as a props “children”, so the son component ca
 ```javascript
 <SonComponent {...this.props}/>
 ```
-## Router:
-	2 key components:\
-<Link>(publisher): change the route in the address bar when this component is clicked\
-<Routes>(subscriber): parse the new route, and select components to render according to the parsed route\
-	History: \
+## Router
+2 key components:\
+```<Link>```(publisher): change the route in the address bar when this component is clicked\
+```<Routes>```(subscriber): parse the new route, and select components to render according to the parsed route\
+History:\
 the history of visited routes will be push into a stack automatically, for you to go back and forth in the history(BOM)\
 
 ## Redux(Relay Store is similar to Redux)
