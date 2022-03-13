@@ -1,6 +1,5 @@
 # Getting Started
-rename the project folder(eg. 1_hello_react) you want to turn on with "src", then run `npm start`
-
+rename the project folder(eg. 1_hello_react) you want to turn on with "src", then run `npm start`\
 To build production ready package: `npm build run`
 
 # REACT learning
@@ -73,12 +72,14 @@ Http requests sent from frontend javascript code without refreshing the page(whe
 The js instance created in frontend which send request and receive response is XMLHttpRequest or xhr
 XHR vs fetch: xhr and fetch are both native in javascript used to send ajax request. Xhr return directly while fetch return a promise object and have a better separation of concern(check whether reach server first then check whether the request is processed). Axios and jQuery are both wrapper around XHR
 Fetch example:
+```javascript
 fetch(some_url).
-	`# check whether reach the server first
+	# check whether reach the server first
 then(response => {console.log(“reach server successfully.”), return response.json()},
         error => {console.log(“failed to reach server”)}).
 # check whether the request is processed by server later
-then(...)`
+then(...)
+```
 Body of a component is passed as a props “children”, so the son component can directly inherit the body by <SonComponent {...this.props}/>
 Router:
 	2 key components:
