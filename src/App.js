@@ -1,5 +1,5 @@
 import React,{Component} from "react"
-import HookDemo from "./components/1_hooks"
+import HookDemo from "./components/1_hooks_basic"
 
 export default class App extends Component{
     render(){
