@@ -50,7 +50,7 @@ export default class HookSon extends React.Component {
         console.log("render is called")
         const {sonValue} = this.state;
         return (<div>
-                    <div>Son receive from father</div>
+                    <div>Son receive {this.props.fatherValue} from father</div>
                     <button onClick={this.increaseSonValue}>click me to increase value own by son</button>
                     <div>Son has value {sonValue} on its own</div>
                 </div>);
